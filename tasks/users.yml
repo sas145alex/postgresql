@@ -14,7 +14,6 @@
     state: present
     login_user: "{{postgresql_admin_user}}"
   become: yes
-  # become_user: "{{postgresql_admin_user}}"
-  become_user: root
+  become_user: "{{postgresql_admin_user}}"
   with_items: "{{postgresql_users}}"
   when: postgresql_users|length > 0
